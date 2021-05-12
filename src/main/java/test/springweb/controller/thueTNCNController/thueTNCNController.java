@@ -28,6 +28,10 @@ public class thueTNCNController {
     @RequestMapping("/configuration")
     public String getCauhinhthue(HttpServletRequest request, Model model)
     {
+        if(request.getSession().getAttribute("thanhvien")==null)
+        {
+            return "index";
+        }
         //thiết lập tên người đăng nhập từ session
         String name = (String) request.getSession().getAttribute("thanhvien");
         model.addAttribute("thvien", name);
@@ -67,6 +71,10 @@ public class thueTNCNController {
     @RequestMapping("/configuration/thueTNCNid={id}")
     public String getThueTNCN(@PathVariable int id,Model model,HttpServletRequest request)
     {
+        if(request.getSession().getAttribute("thanhvien")==null)
+        {
+            return "index";
+        }
         //thiết lập tên người đăng nhập từ session
         String name = (String) request.getSession().getAttribute("thanhvien");
         model.addAttribute("thvien", name);
@@ -108,6 +116,10 @@ public class thueTNCNController {
     @RequestMapping("/configuration/thuesuatid={id}")
     public String getThuesuat(@PathVariable int id,Model model,HttpServletRequest request)
     {
+        if(request.getSession().getAttribute("thanhvien")==null)
+        {
+            return "index";
+        }
         String name = (String) request.getSession().getAttribute("thanhvien");
         int idthueTNCN = (int) request.getSession().getAttribute("thueTNCNdangchon");
         model.addAttribute("thvien", name);
@@ -134,6 +146,10 @@ public class thueTNCNController {
     @RequestMapping("/configuration/khoangiamtruid={id}")
     public String getKhoangiamtru(@PathVariable int id,Model model,HttpServletRequest request)
     {
+        if(request.getSession().getAttribute("thanhvien")==null)
+        {
+            return "index";
+        }
         String name = (String) request.getSession().getAttribute("thanhvien");
         model.addAttribute("thvien", name);
         List<thuetncn> dsThueTNCN = tS.getDsTheloaiThueTNCN();
@@ -157,6 +173,10 @@ public class thueTNCNController {
     @RequestMapping("/configuration/cauhinhThuesuat")
     public String cauhinhThuesuat(HttpServletRequest request, RedirectAttributes redirect, Model model)
     {
+        if(request.getSession().getAttribute("thanhvien")==null)
+        {
+            return "index";
+        }
         //lấy dữ liệu từ form
         String idThuesuat = request.getParameter("chitietthuesuatid");
         String mucthuesuat = request.getParameter("mucthuesuat");
@@ -191,6 +211,10 @@ public class thueTNCNController {
     @RequestMapping("/configuration/cauhinhGiamtru")
     public String cauhinhGiamtru(HttpServletRequest request, RedirectAttributes redirect, Model model)
     {
+        if(request.getSession().getAttribute("thanhvien")==null)
+        {
+            return "index";
+        }
         //lấy dữ liệu từ form
         String idKhoangiamtru = request.getParameter("khoangiamtruid");
         String khoangiamtru = request.getParameter("khoangiamtru");

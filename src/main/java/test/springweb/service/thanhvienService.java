@@ -36,4 +36,13 @@ public class thanhvienService {
         thanhvien tv = tvres.getUsertheoTKvaMK(tk,mk);
         return tv;
     }
+
+    public boolean checkadmin(String chucvu)
+    {
+        if(chucvu.equals("admin"))
+        {
+            return  true;
+        }
+        return false;
+    }
 }

@@ -37,7 +37,6 @@ public class thanhvienController {
     public String index(HttpServletRequest request, RedirectAttributes redirect)
     {
         request.getSession().setAttribute("thanhvien",null);
-
         return "redirect:/index";
     }
 }

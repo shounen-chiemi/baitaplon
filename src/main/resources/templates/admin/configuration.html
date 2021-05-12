@@ -7,7 +7,7 @@
     <meta name="description" content=""/>
     <meta name="author" content="Dashboard"/>
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina"/>
-    <title>HaiDo - Bootstrap Admin Template</title>
+    <title>Quản lý thuế TNCN</title>
 
     <!-- Favicons -->
     <link th:href="@{/img/favicon.png}" rel="icon"/>
@@ -84,30 +84,20 @@
         }
     </style>
 
-
-    <!-- =======================================================
-      Template Name: Dashio
-      Template URL: https://templatemag.com/dashio-bootstrap-admin-template/
-      Author: TemplateMag.com
-      License: https://templatemag.com/license/
-    ======================================================= -->
 </head>
 
 <body>
 <section id="container">
-    <!-- **********************************************************************************************************************************************************
-        TOP BAR CONTENT & NOTIFICATIONS
-        *********************************************************************************************************************************************************** -->
-    <!--header start-->
+
     <header class="header black-bg">
         <div class="sidebar-toggle-box">
             <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
         </div>
-        <!--logo start-->
+
         <a href="index-admin.html" class="logo" >
             <div><b><span th:text="${thvien}"></span></b></div>
         </a>
-        <!--logo end-->
+
 
         <div class="top-menu">
             <form action="/logout" method="get">
@@ -120,7 +110,7 @@
 
     <aside>
         <div id="sidebar" class="nav-collapse ">
-            <!-- sidebar menu start-->
+
             <ul class="sidebar-menu" id="nav-accordion">
 
                 <li class="mt">
@@ -178,7 +168,6 @@
 
                 <button type="reset">Nhập lai</button>
                 <button type="submit">Lưu</button>
-<!--            </form>-->
             </form>
         </div>
 
@@ -201,28 +190,11 @@
 
                 <button type="reset">Nhập lai</button>
                 <button type="submit">Lưu</button>
-                <!--            </form>-->
+
             </form>
         </div>
     </section>
-    <!--main content end-->
-    <!--footer start-->
-    <footer class="site-footer">
-        <div class="text-center">
-            <p>
-                Copyrights <strong>Hai Do</strong>. All Rights Reserved
-            </p>
-            <div class="credits">
-                Created with HaiDo template by <a href="https://templatemag.com/">TemplateMag</a>
-            </div>
-            <a href="index-admin.html#" class="go-top">
-                <i class="fa fa-angle-up"></i>
-            </a>
-        </div>
-    </footer>
-    <!--footer end-->
 </section>
-<!-- js placed at the end of the document so the pages load faster -->
 <script src="lib/jquery/jquery.min.js"></script>
 
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>

@@ -39,6 +39,10 @@ public class baocaothueController {
     //load trang baocaothue
     @RequestMapping("/list-taxpayer")
     public String listTaxPayer(Model model, HttpServletRequest request, RedirectAttributes redirect){
+        if(request.getSession().getAttribute("thanhvien")==null)
+        {
+            return "index";
+        }
         String name = (String) request.getSession().getAttribute("thanhvien");
         model.addAttribute("thvien", name);
         request.getSession().setAttribute("dsbaocaothue",null);
@@ -51,6 +55,10 @@ public class baocaothueController {
     //load trang báo cáo thuế khi tìm kiếm
     @RequestMapping("/list-taxpayer/{thoigian}")
     public String getTimkiemtheoThoigian(@PathVariable String thoigian, Model model, HttpServletRequest request, RedirectAttributes redirect){
+        if(request.getSession().getAttribute("thanhvien")==null)
+        {
+            return "index";
+        }
         String name = (String) request.getSession().getAttribute("thanhvien");
         model.addAttribute("thvien", name);
         request.getSession().setAttribute("dsbaocaothue",null);
@@ -152,6 +160,10 @@ public class baocaothueController {
     }
     @RequestMapping("/list-taxpayer/thueTNCNid={timkiem}")
     public String getTimkiem(@PathVariable int timkiem, Model model, HttpServletRequest request, RedirectAttributes redirect){
+        if(request.getSession().getAttribute("thanhvien")==null)
+        {
+            return "index";
+        }
         String name = (String) request.getSession().getAttribute("thanhvien");
         model.addAttribute("thvien", name);
         request.getSession().setAttribute("dsbaocaothue",null);
@@ -166,6 +178,10 @@ public class baocaothueController {
     @RequestMapping("list-taxpayer/page/{pagenumber}")
     public String phanTrang(HttpServletRequest request,@PathVariable int pagenumber, Model model,RedirectAttributes redirect)
     {
+        if(request.getSession().getAttribute("thanhvien")==null)
+        {
+            return "index";
+        }
         String name = (String) request.getSession().getAttribute("thanhvien");
         model.addAttribute("thvien", name);
         if(request.getSession().getAttribute("dsTheloai")==null)
@@ -198,6 +214,10 @@ public class baocaothueController {
     @RequestMapping("list-taxpayer/thueTNCNid={timkiem}/page/{pagenumber}")
     public String phanTrangThueTNCN(HttpServletRequest request,@PathVariable int timkiem, @PathVariable int pagenumber, Model model,RedirectAttributes redirect)
     {
+        if(request.getSession().getAttribute("thanhvien")==null)
+        {
+            return "index";
+        }
         String name = (String) request.getSession().getAttribute("thanhvien");
         model.addAttribute("thvien", name);
         if(request.getSession().getAttribute("dsTheloai")==null)
@@ -227,6 +247,10 @@ public class baocaothueController {
     @RequestMapping("list-taxpayer/{thoigian}/page/{pagenumber}")
     public String phanTrangThueTNCN(HttpServletRequest request,@PathVariable String thoigian, @PathVariable int pagenumber, Model model,RedirectAttributes redirect)
     {
+        if(request.getSession().getAttribute("thanhvien")==null)
+        {
+            return "index";
+        }
         String name = (String) request.getSession().getAttribute("thanhvien");
         model.addAttribute("thvien", name);
         if(request.getSession().getAttribute("dsTheloai")==null)
@@ -294,6 +318,10 @@ public class baocaothueController {
     @RequestMapping("list-taxpayer/idBaocaothue={id}")
     public String getChitietthue(@PathVariable int id,HttpServletRequest request,Model model)
     {
+        if(request.getSession().getAttribute("thanhvien")==null)
+        {
+            return "index";
+        }
         baocaothueDTO baocaothueDTO = new baocaothueDTO();
         baocaothueDTO = bctS.getBaocaothueTheoId(id);
         model.addAttribute("baocaothuechitiet",baocaothueDTO);

@@ -7,7 +7,7 @@
     <meta name="description" content=""/>
     <meta name="author" content="Dashboard"/>
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina"/>
-    <title>HaiDo - Bootstrap Admin Template</title>
+    <title>Quản lý thuế TNCN</title>
 
     <!-- Favicons -->
     <link th:href="@{/img/favicon.png}" rel="icon"/>
@@ -37,7 +37,7 @@
     <style>
         /* Style The Dropdown Button */
         .dropbtn {
-            background-color: #f0ad4e;
+            background-color: #4ECDC4;
             color: white;
             padding: 8px;
             font-size: 13px;
@@ -80,7 +80,7 @@
 
         /* Change the background color of the dropdown button when the dropdown content is shown */
         .dropdown:hover .dropbtn {
-            background-color: #f0ad4e;
+            background-color: #4ECDC4;
         }
     </style>
 
@@ -158,11 +158,11 @@
     <section id="main-content">
         <div style="height: 100px;"></div>
         <div style="text-align: center"><h1>Danh Sách báo cáo thuế</h1></div>
-        <div class="search" style="margin-left: 20%; margin-right: 20%">
-            <div><span>tìm kiếm theo bất kì nội dung nào</span></div>
-            <input class="form-control" type="text"
-                   placeholder=""/>
-        </div>
+<!--        <div class="search" style="margin-left: 20%; margin-right: 20%">-->
+<!--            <div><span>tìm kiếm theo bất kì nội dung nào</span></div>-->
+<!--            <input class="form-control" type="text"-->
+<!--                   placeholder=""/>-->
+<!--        </div>-->
 
         <div style="padding: 30px;">
 
@@ -182,7 +182,7 @@
                             <input type="text" style="color: #797979;width: 330px" value="tìm kiếm theo thành phố (ví dụ : Hà Nội)" disabled>
                             <div style="">
                                 <input style="width: 167px;" class="form-control" type="text" name="thanhpho"
-                                       />
+                                       required/>
                             </div>
                             <div class="dropdown">
                                 <input type="submit" value="tìm kiếm" class="dropbtn">
@@ -296,22 +296,10 @@
                 <td th:text="${b.getTongtien()}"></td>
                 <td>
                     <form th:action="@{http://localhost:8082/list-taxpayer/idBaocaothue={id}/(id=${b.getId()})}" target="_blank">
-                        <a class="btn btn-warning" onclick="this.parentElement.submit();"><i class="fas fa-user-edit ml-2"></i></a>
+                        <a style="background-color: #4ECDC4;border-color: #4ECDC4" class="btn btn-warning" onclick="this.parentElement.submit();"><i class="fas fa-user-edit ml-2"></i></a>
                     </form>
                 </td>
             </tr>
-<!--            <tr >-->
-<!--                <td >INT123</td>-->
-<!--                <td >Đỗ Thanh Hải</td>-->
-<!--                <td >1999</td>-->
-<!--                <td >Số 2 Tạ Quang Bửu</td>-->
-<!--                <td >2384792834</td>-->
-<!--                <td >23/02/2021</td>-->
-<!--                <td><a-->
-<!--                       class="btn btn-warning"><i class="fas fa-user-edit ml-2"></i></a></td>-->
-<!--                <td><a-->
-<!--                        class="btn btn-danger"><i class="fas fa-user-times ml-2"></i></a></td>-->
-<!--            </tr>-->
             </tbody>
         </table>
             <div style="display: flex;justify-content: center;">

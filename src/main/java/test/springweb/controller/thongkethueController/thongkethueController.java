@@ -26,6 +26,10 @@ public class thongkethueController {
     @RequestMapping("/report")
     public String report(Model model,HttpServletRequest request)
     {
+        if(request.getSession().getAttribute("thanhvien")==null)
+        {
+            return "index";
+        }
         //thiết lập tên người đăng nhập từ session
         String name = (String) request.getSession().getAttribute("thanhvien");
         model.addAttribute("thvien", name);
@@ -49,6 +53,10 @@ public class thongkethueController {
     @RequestMapping("/report/thueTNCNid={id}")
     public String chonthuetncn(@PathVariable int id, Model model, HttpServletRequest request)
     {
+        if(request.getSession().getAttribute("thanhvien")==null)
+        {
+            return "index";
+        }
         //thiết lập tên người đăng nhập từ session
         String name = (String) request.getSession().getAttribute("thanhvien");
         model.addAttribute("thvien", name);
@@ -72,6 +80,10 @@ public class thongkethueController {
     @RequestMapping("/report/thang")
     public String thongketheothang(Model model,HttpServletRequest request)
     {
+        if(request.getSession().getAttribute("thanhvien")==null)
+        {
+            return "index";
+        }
         if(request.getSession().getAttribute("thueTNCN")==null)
         {
             model.addAttribute("thongbao","chưa chọn loại thuế TNCN");
@@ -114,6 +126,10 @@ public class thongkethueController {
     @RequestMapping("/report/nam")
     public String thongketheonam(Model model,HttpServletRequest request)
     {
+        if(request.getSession().getAttribute("thanhvien")==null)
+        {
+            return "index";
+        }
         if(request.getSession().getAttribute("thueTNCN")==null)
         {
             model.addAttribute("thongbao","chưa chọn loại thuế TNCN");
