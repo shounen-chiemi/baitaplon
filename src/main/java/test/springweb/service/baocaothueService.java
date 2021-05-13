@@ -11,6 +11,7 @@ import test.springweb.entity2.repository.baocaothueRepository;
 import test.springweb.entity2.repository.chitietthuesuatRepository;
 import test.springweb.entity2.repository.thuetncnRepository;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 @Service
@@ -361,6 +362,5 @@ public class baocaothueService {
         thongke.setLoaithueTNCN(thueR.getthuetncnTheoID(thuetncnid).getLoaithuetncn());
         return thongke;
     }
-
 
 }

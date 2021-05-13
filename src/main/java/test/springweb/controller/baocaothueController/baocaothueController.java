@@ -1,27 +1,21 @@
 package test.springweb.controller.baocaothueController;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.support.PagedListHolder;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import test.springweb.dto.baocaothueDTO;
-import test.springweb.entity2.baocaothue;
-import test.springweb.entity2.khoangiamtru;
-import test.springweb.entity2.repository.baocaothueRepository;
 import test.springweb.entity2.thuetncn;
 import test.springweb.service.baocaothueService;
 import test.springweb.service.khoangiamtruService;
+import test.springweb.service.thanhvienService;
 import test.springweb.service.thueTNCNService;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 import java.util.regex.Matcher;
@@ -35,10 +29,11 @@ public class baocaothueController {
     private khoangiamtruService kgS;
     @Autowired
     private thueTNCNService tS;
-
+    @Autowired
+    private thanhvienService thvienS;
     //load trang baocaothue
     @RequestMapping("/list-taxpayer")
-    public String listTaxPayer(Model model, HttpServletRequest request, RedirectAttributes redirect){
+    public String xemBaocaothueTNCN(Model model, HttpServletRequest request, RedirectAttributes redirect){
         if(request.getSession().getAttribute("thanhvien")==null)
         {
             return "index";
@@ -54,7 +49,7 @@ public class baocaothueController {
     }
     //load trang báo cáo thuế khi tìm kiếm
     @RequestMapping("/list-taxpayer/{thoigian}")
-    public String getTimkiemtheoThoigian(@PathVariable String thoigian, Model model, HttpServletRequest request, RedirectAttributes redirect){
+    public String TimkiemtheoThoigian(@PathVariable String thoigian, Model model, HttpServletRequest request, RedirectAttributes redirect){
         if(request.getSession().getAttribute("thanhvien")==null)
         {
             return "index";
@@ -159,7 +154,7 @@ public class baocaothueController {
         return "redirect:/list-taxpayer/"+thoigian+"/page/1";
     }
     @RequestMapping("/list-taxpayer/thueTNCNid={timkiem}")
-    public String getTimkiem(@PathVariable int timkiem, Model model, HttpServletRequest request, RedirectAttributes redirect){
+    public String TimTheoThueTNCN(@PathVariable int timkiem, Model model, HttpServletRequest request, RedirectAttributes redirect){
         if(request.getSession().getAttribute("thanhvien")==null)
         {
             return "index";

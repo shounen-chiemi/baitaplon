@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import test.springweb.entity2.repository.thanhvienRepository;
 import test.springweb.entity2.thanhvien;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Objects;
 
 @Service
@@ -44,5 +45,14 @@ public class thanhvienService {
             return  true;
         }
         return false;
+    }
+
+    public String pheduyetdangnhap(HttpServletRequest request, String trang)
+    {
+        if(request.getSession().getAttribute("thanhvien")==null)
+        {
+            return "index";
+        }
+        return trang;
     }
 }
