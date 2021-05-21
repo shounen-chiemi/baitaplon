@@ -65,6 +65,11 @@ public class BaocaothueController {
         if(thoigian.equals("ngay"))
         {
             String thgian = request.getParameter("ngay");
+            if(thgian.equals(""))
+            {
+                model.addAttribute("thongbao","chưa chọn ngày");
+                return "thongbaoTimkiem";
+            }
             request.getSession().setAttribute("thoigian",thgian);
         }
         //nếu mục tìm kiếm là năm
@@ -95,6 +100,11 @@ public class BaocaothueController {
         else if(thoigian.equals("thanhpho"))
         {
             String thanhpho = request.getParameter("thanhpho");
+            if(thanhpho.equals(""))
+            {
+                model.addAttribute("thongbao","chưa chọn thành phố");
+                return "thongbaoTimkiem";
+            }
 //            Pattern p = Pattern.compile("[\\u0A00-\\u0A7F]");
             StringTokenizer s = new StringTokenizer(thanhpho," ");
             String ten1 = "";
@@ -105,20 +115,17 @@ public class BaocaothueController {
                 ten1 = ten1 + kitu + " ";
                 ten2 = ten2 + kitu;
             }
-            for(int i = 0;i<ten2.length();i++)
-            {
-                if(!Character.isLetter(ten2.charAt(i)))
-                {
-                    model.addAttribute("thongbao","dữ liệu không hợp lệ, có chứa kí tự khác ngoài chữ cái");
-                    return "thongbaoTimkiem";
-                }
-            }
             request.getSession().setAttribute("thanhpho",ten1);
         }
         //nếu mục tìm kiếm là tên
         else if(thoigian.equals("nguoidongthue"))
         {
             String ten = request.getParameter("nguoidongthue");
+            if(ten.trim().equals(""))
+            {
+                model.addAttribute("thongbao","chưa nhập tên");
+                return "thongbaoTimkiem";
+            }
             StringTokenizer s = new StringTokenizer(ten," ");
             String ten1 = "";
             String ten2 = "";
@@ -142,6 +149,11 @@ public class BaocaothueController {
         else if(thoigian.equals("cmnd"))
         {
             String cmnd = request.getParameter("cmnd");
+            if(cmnd.trim().equals(""))
+            {
+                model.addAttribute("thongbao","chưa nhập chứng minh nhân dân");
+                return "thongbaoTimkiem";
+            }
             Pattern p = Pattern.compile("[^0-9]");
             Matcher m = p.matcher(cmnd.trim());
             if(m.find())
@@ -198,6 +210,7 @@ public class BaocaothueController {
         Pageable pageable = PageRequest.of(tranghientai,5);
 
         List<BaocaothueDTO> dsbc = bctS.getdsbaocaothue(pageable);
+
         request.getSession().setAttribute("tranghientai",(int)tranghientai+1);
         model.addAttribute("danhsachThue",dsbc);
         model.addAttribute("tranghientai",(int)tranghientai+1);

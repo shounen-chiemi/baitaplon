@@ -166,7 +166,7 @@
                     <div class="dropdown">
                         <button class="dropbtn">Thống kê theo loại thuế TNCN</button>
                         <div class="dropdown-content" >
-                            <a th:href="@{http://localhost:8082/report/thueTNCNid={typeSearch}/(typeSearch=${t.getId()})}" th:each="t : ${dsTheloai}" th:text="${t.getLoaithuetncn()}"></a>
+                            <a th:href="@{http://localhost:8089/report/thueTNCNid={typeSearch}/(typeSearch=${t.getId()})}" th:each="t : ${dsTheloai}" th:text="${t.getLoaithuetncn()}"></a>
                         </div>
                     </div>
 
@@ -176,7 +176,7 @@
                 </div>
 
                 <div style="display: flex;margin-top: 10px;justify-content: space-between;">
-                    <form th:action="@{http://localhost:8082/report/thang}">
+                    <form th:action="@{http://localhost:8089/report/thang}">
                         <div style="display: flex">
                             <input type="text" style="color: #797979;width: 330px" value="tìm kiếm theo tháng + năm" disabled>
                             <div>
@@ -189,7 +189,7 @@
                         </div>
                     </form>
 
-                    <form th:action="@{http://localhost:8082/report/nam}">
+                    <form th:action="@{http://localhost:8089/report/nam}">
                         <div style="display: flex">
                             <input type="text" style="color: #797979;width: 330px" value="thống kê theo năm (định dạng yyyy)" disabled>
                             <div style="">

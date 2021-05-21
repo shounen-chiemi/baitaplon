@@ -19,7 +19,7 @@ public class TestChitietthuesuat {
     @Autowired
     ChitietthuesuatService chitietthuesuatService;
 
-    //kiểm tra danh sách thuế suất lấy theo id Thuế TNCN có tồn tại
+        //kiểm tra danh sách thuế suất lấy theo id Thuế TNCN có tồn tại
     @Test
     public void KiemTraDanhSachThueSuatTheoIDThueTNCNCoTonTai()
     {
@@ -31,7 +31,7 @@ public class TestChitietthuesuat {
     public void KiemTraDanhSachThueSuatTheoIDThueTNCNKhongTonTai()
     {
         List<Chitietthuesuat> ds = chitietthuesuatService.getDsChitietthuesuatTheoThueTNCNid(0);
-        Assert.assertNull(ds);
+        Assert.assertEquals(0,ds.size());
     }
     //kiểm tra số lượng thuế suất lấy theo id Thuế TNCN
     @Test
@@ -61,6 +61,7 @@ public class TestChitietthuesuat {
         Chitietthuesuat chitietthuesuat = chitietthuesuatService.getChitietthuesuat(1);
         Assert.assertEquals("phân phối cung cấp hàng hóa",chitietthuesuat.getTenmuc());
     }
+
     //kiểm tra cập nhật thuế suất với mức thuế suất khác mức cũ
     @Test
     public void KiemTraCapNhatThueSuat1()

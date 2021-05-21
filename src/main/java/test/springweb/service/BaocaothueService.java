@@ -45,10 +45,8 @@ public class BaocaothueService {
             baocaothueDTO.setTinhtrang(i.getTinhtrang());
             baocaothueDTO.setNguoidongthue(i.getNguoidongthue());
             baocaothueDTO.setList_khoangiamtru(i.getList_khoangiamtru());
-
             int thue = tinhTiennop(i);
             baocaothueDTO.setTongtien((int) thue);
-
             dsbc.add(baocaothueDTO);
         }
         return dsbc;
@@ -303,31 +301,7 @@ public class BaocaothueService {
         }
         return dsbc;
     }
-//    public List<BaocaothueDTO> getDsbaocaothueTheoThang(Pageable pageable, int thang, int nam, int thueTNCNid)
-//    {
-//        Page<Baocaothue> ds = bctR.getDsBaocaothueTheoThang(pageable,thang,nam);
-//
-//        List<BaocaothueDTO> dsbc = new ArrayList<>();
-//        for(Baocaothue i : ds)
-//        {
-//            BaocaothueDTO baocaothueDTO = new BaocaothueDTO();
-//            baocaothueDTO.setChitietthuesuat(i.getChitietthuesuat());
-//            baocaothueDTO.setLoaithue(i.getLoaithue());
-//            baocaothueDTO.setId(i.getId());
-//            baocaothueDTO.setNgaynop(i.getNgaynop());
-//            baocaothueDTO.setSonguoiphuthuoc(i.getSonguoiphuthuoc());
-//            baocaothueDTO.setTnct(i.getTnct());
-//            baocaothueDTO.setTinhtrang(i.getTinhtrang());
-//            baocaothueDTO.setNguoidongthue(i.getNguoidongthue());
-//            baocaothueDTO.setList_khoangiamtru(i.getList_khoangiamtru());
-//
-//            int thue = tinhTiennop(i);
-//            baocaothueDTO.setTongtien((int) thue);
-//
-//            dsbc.add(baocaothueDTO);
-//        }
-//        return dsbc;
-//    }
+
 
     public Thongke getDsbaocaothueTheoNam(String  nam, int thuetncnid)
     {

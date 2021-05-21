@@ -11,10 +11,7 @@ public class HienThiController {
         return "index";
     }
 
-    @RequestMapping("/test")
-    public String index(){
-        return "test";
-    }
+
     @RequestMapping("/home")
     public String home1(){
         return "home";
@@ -39,11 +36,5 @@ public class HienThiController {
     public String contact(){
         return "contact";
     }
-
-    @RequestMapping("/organizations-taxpayer")
-    public String organizationsTaxpayer(){
-        return "admin/organizations-taxpayer";
-    }
-
 
 }

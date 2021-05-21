@@ -2,23 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:th="http://www.thymeleaf.org" lang="vi">
 <head>
-	<title></title>
+	<title>Quản lý thuế TNCN</title>
 	<div th:replace="home::head"></div>
 </head>
 <body>
-	<div class="containers">
-		<div th:replace="home::div.headers"></div>
-		<div class="contents">
-			<div class="header-image">
-				<img class="img-thue" src="image/trangchu1.PNG"/>
-			</div>
-			<div class="header-image">
-				<img class="img-thue" src="image/trangchu2.PNG"/>
-			</div>
-			
+<div class="containers">
+	<div th:replace="home::div.headers"></div>
+	<div class="contents">
+		<div class="header-image">
+			<img class="img-thue" th:src="@{/image/trangchu1.png}"/>
 		</div>
-		<!-- The Modal -->
-		<div th:replace="home::div#myModal"></div>
+		<div class="header-image">
+			<img class="img-thue" th:src="@{/image/trangchu2.png}"/>
+		</div>
+
 	</div>
+	<!-- The Modal -->
+	<div th:replace="home::div#myModal"></div>
+</div>
 </body>
 </html>

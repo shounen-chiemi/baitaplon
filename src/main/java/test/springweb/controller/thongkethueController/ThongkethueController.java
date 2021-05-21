@@ -163,7 +163,7 @@ public class ThongkethueController {
         if(m.find())
         {
             model.addAttribute("thongbao","dữ liệu không hợp lệ, có chứa kí tự khác ngoài số");
-            return "thongbaoTimkiem";
+            return "thongbaoBaocao";
         }
         thongke = baocaothueS.getDsbaocaothueTheoNam(thgian,idthuetncn);
         model.addAttribute("thongke",thongke);

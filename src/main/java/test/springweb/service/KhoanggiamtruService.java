@@ -24,20 +24,6 @@ public class KhoanggiamtruService {
         return ds;
     }
 
-    public String getTenkhoangiamtruTheoID(int id)
-    {
-        String ten = "";
-        Khoangiamtru khoangiamtru = kgtR.getKhoangiamtru(id);
-        ten = khoangiamtru.getTenmucgiamtru();
-        return ten;
-    }
-
-    public int getKhoangiamtruTheoID(int id)
-    {
-        Khoangiamtru khoangiamtru = kgtR.getKhoangiamtru(id);
-        return khoangiamtru.getMucgiamtru();
-    }
-
     public Khoangiamtru getKhoangiamtru(int id)
     {
         Khoangiamtru khoangiamtru = kgtR.getKhoangiamtru(id);

@@ -8,7 +8,7 @@
 <div class="containers">
 	<div class="headers">
 		<div class="header-image">
-			<img class="img-thue" src="image/Thue.PNG"/>
+			<img class="img-thue" th:src="@{/image/Thue.png}"/>
 		</div>
 		<div class="menu">
 			<ul>
@@ -23,10 +23,10 @@
 	</div>
 	<div class="contents">
 		<div class="header-image">
-			<img class="img-thue" src="image/new1.PNG"/>
+			<img class="img-thue" th:src="@{/image/new1.png}"/>
 		</div>
 		<div class="header-image">
-			<img class="img-thue" src="image/new2.PNG"/>
+			<img class="img-thue" th:src="@{/image/new2.png}"/>
 		</div>
 	</div>
 	<div th:replace="home::div#myModal"></div>

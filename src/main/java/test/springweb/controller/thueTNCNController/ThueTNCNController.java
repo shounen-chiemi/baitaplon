@@ -199,7 +199,8 @@ public class ThueTNCNController {
             Chitietthuesuat chitietthuesuat = chitietService.getChitietthuesuat(Integer.parseInt(idThuesuat));
             chitietthuesuat.setThuesuat(f);
             chitietService.capnhatThuesuat(chitietthuesuat);
-            return "redirect:/configuration";
+            model.addAttribute("thongbao","cập nhật mức thuế suất thành công");
+            return "thongbaoCauhinhthue";
         }
         catch (NumberFormatException e)
         {
@@ -231,7 +232,8 @@ public class ThueTNCNController {
             Khoangiamtru khoangiamtru1 = khoangiamtruS.getKhoangiamtru(Integer.parseInt(idKhoangiamtru));
             khoangiamtru1.setMucgiamtru(i);
             khoangiamtruS.capnhatKhoangiamtru(khoangiamtru1);
-            return "redirect:/configuration";
+            model.addAttribute("thongbao","cập nhật mức giảm trừ thành công");
+            return "thongbaoCauhinhthue";
         }
         catch (NumberFormatException e)
         {

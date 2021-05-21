@@ -143,21 +143,21 @@
             <div class="dropdown">
                 <button class="dropbtn">Chọn loại thuế TNCN</button>
                 <div class="dropdown-content" >
-                    <a th:href="@{http://localhost:8082/configuration/thueTNCNid={typeSearch}/(typeSearch=${t.getId()})}" th:each="t : ${dsTheloai}" th:text="${t.getLoaithuetncn()}"></a>
+                    <a th:href="@{http://localhost:8089/configuration/thueTNCNid={typeSearch}/(typeSearch=${t.getId()})}" th:each="t : ${dsTheloai}" th:text="${t.getLoaithuetncn()}"></a>
                 </div>
             </div>
         </div>
         <div style="text-align: center"><h1>Loại thuế đang chọn : </h1><h1 th:text="${loaithuedangchon}"></h1></div>
         <div class="formBorder" style="display: flex; justify-content: center; margin: 40px 0; width: 100%;">
 
-            <form style="width: 50%;text-align: center;" th:action="@{http://localhost:8082/configuration/cauhinhThuesuat}" method="post">
+            <form style="width: 50%;text-align: center;" th:action="@{http://localhost:8089/configuration/cauhinhThuesuat}" method="post">
                 <div style="display: flex"><p>thuế suất đang chọn :</p><p th:text="${chitietthuesuat.getTenmuc()}"></p></div>
                 <div style="display: flex"><p>mức thuế suất (%) :</p><p th:text="${chitietthuesuat.getThuesuat()}"></p></div>
                 <div style="display: flex;margin-bottom: 20px;">
                     <div class="dropdown">
                         <button class="dropbtn" style="width: 180px;margin-bottom: 10px;" >Chọn thuế suất</button>
                         <div class="dropdown-content" >
-                            <a th:href="@{http://localhost:8082/configuration/thuesuatid={typeSearch}/(typeSearch=${t.getId()})}" th:each="t : ${dsThuesuat}" th:text="${t.getTenmuc()}"></a>
+                            <a th:href="@{http://localhost:8089/configuration/thuesuatid={typeSearch}/(typeSearch=${t.getId()})}" th:each="t : ${dsThuesuat}" th:text="${t.getTenmuc()}"></a>
                         </div>
                     </div>
                     <input type="text" class="form-control mb-2 mr-sm-2"
@@ -172,14 +172,14 @@
 
         <div style="text-align: center"><h1>Cấu hình khoản giảm trừ</h1></div>
         <div class="formBorder" style="display: flex; justify-content: center; margin: 40px 0; width: 100%;">
-            <form th:action="@{http://localhost:8082/configuration/cauhinhGiamtru}" style="width: 50%;text-align: center;">
+            <form th:action="@{http://localhost:8089/configuration/cauhinhGiamtru}" style="width: 50%;text-align: center;">
                 <div style="display: flex"><p>khoản giảm trừ đang chọn :</p><p th:text="${khoangiamtru.getTenmucgiamtru()}"></p></div>
                 <div style="display: flex"><p>mức giảm trừ (vnđ) :</p><p th:text="${khoangiamtru.getMucgiamtru()}"></p></div>
                 <div style="display: flex;margin-bottom: 20px;">
                     <div class="dropdown">
                         <button class="dropbtn" style="width: 180px">Chọn khoản giảm trừ</button>
                         <div class="dropdown-content" >
-                            <a th:href="@{http://localhost:8082/configuration/khoangiamtruid={typeSearch}/(typeSearch=${t.getId()})}" th:each="t : ${dsGiamtru}" th:text="${t.getTenmucgiamtru()}"></a>
+                            <a th:href="@{http://localhost:8089/configuration/khoangiamtruid={typeSearch}/(typeSearch=${t.getId()})}" th:each="t : ${dsGiamtru}" th:text="${t.getTenmucgiamtru()}"></a>
                         </div>
                     </div>
                     <input type="text" class="form-control mb-2 mr-sm-2"

@@ -18,19 +18,35 @@ public class ThanhvienController {
     private ThanhvienService tvs;
 
     @RequestMapping("loginuser")
-    public String Dangnhap(HttpServletRequest request, HttpServletResponse response, Model model){
+    public String Dangnhap(HttpServletRequest request, HttpServletResponse response, Model model,RedirectAttributes redirect){
         String taikhoan = request.getParameter("txtU");
         String matkhau = request.getParameter("txtP");
+
+        if(taikhoan.trim().equals(""))
+        {
+            model.addAttribute("thongbao","Tài khoản không được chứa khoảng trắng");
+            return "thongbaoDangnhap";
+        }
+        if(matkhau.trim().equals(""))
+        {
+            model.addAttribute("thongbao","Mật khẩu không được chứa khoảng trắng");
+            return "thongbaoDangnhap";
+        }
 
         Thanhvien thanhvien = tvs.login(taikhoan,matkhau);
         if(Objects.nonNull(thanhvien)) {
             String name = thanhvien.getNhanvien().getHo() + " " + thanhvien.getNhanvien().getTendem() + " " + thanhvien.getNhanvien().getTen();
             model.addAttribute("thvien", name);
             request.getSession().setAttribute("thanhvien",name);
-            return "admin/list-taxpayer";
+            return "redirect:/list-taxpayer";
         }
         else
-            return "index";
+        {
+            model.addAttribute("thongbao","Đăng nhập thất bại, tài khoản hoặc mật khẩu không chính xác");
+            return "thongbaoDangnhap";
+        }
+
+
     }
 
     @RequestMapping("logout")

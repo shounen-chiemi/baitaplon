@@ -171,13 +171,13 @@
                     <div class="dropdown">
                         <button class="dropbtn">Lọc theo loại thuế TNCN</button>
                         <div class="dropdown-content" >
-                            <a th:href="@{http://localhost:8082/list-taxpayer/thueTNCNid={typeSearch}/(typeSearch=${t.getId()})}" th:each="t : ${dsTheloai}" th:text="${t.getLoaithuetncn()}"></a>
+                            <a th:href="@{http://localhost:8089/list-taxpayer/thueTNCNid={typeSearch}/(typeSearch=${t.getId()})}" th:each="t : ${dsTheloai}" th:text="${t.getLoaithuetncn()}"></a>
                         </div>
                     </div>
                 </div>
 
                 <div style="display: flex;margin-top: 10px;justify-content: space-between">
-                    <form th:action="@{http://localhost:8082/list-taxpayer/thanhpho}">
+                    <form th:action="@{http://localhost:8089/list-taxpayer/thanhpho}">
                         <div style="display: flex">
                             <input type="text" style="color: #797979;width: 330px" value="tìm kiếm theo thành phố (ví dụ : Hà Nội)" disabled>
                             <select style="overflow: visible !important;width: 220px;height: 34px;" name="thanhpho">
@@ -263,7 +263,7 @@
 
                     </form>
 
-                    <form th:action="@{http://localhost:8082/list-taxpayer/nam}">
+                    <form th:action="@{http://localhost:8089/list-taxpayer/nam}">
                         <div style="display: flex">
                             <input type="text" style="color: #797979;width: 330px" value="tìm kiếm theo năm" disabled>
                             <div style="">
@@ -279,7 +279,7 @@
                 </div>
                 <div style="display: flex;margin-top: 10px;justify-content: space-between;">
 
-                    <form th:action="@{http://localhost:8082/list-taxpayer/thang}">
+                    <form th:action="@{http://localhost:8089/list-taxpayer/thang}">
                         <div style="display: flex">
                             <input type="text" style="color: #797979;width: 330px" value="tìm kiếm theo tháng + năm" disabled>
                             <div>
@@ -294,11 +294,11 @@
                     </form>
 
 
-                    <form th:action="@{http://localhost:8082/list-taxpayer/ngay}">
+                    <form th:action="@{http://localhost:8089/list-taxpayer/ngay}">
                         <div style="display: flex">
                             <input type="text" style="color: #797979;width: 330px" value="tìm kiếm theo ngày" disabled>
                             <div >
-                                <input style="width: 220px;" class="form-control" name="ngay" type="date"
+                                <input id="ngay" style="width: 220px;" class="form-control" name="ngay" type="date"
                                        th:value="${ngay}" lang="vi"/>
                             </div>
                             <div class="dropdown">
@@ -311,7 +311,7 @@
 
                 <div style="display: flex;margin-top: 10px;justify-content: space-between;">
 
-                    <form th:action="@{http://localhost:8082/list-taxpayer/nguoidongthue}">
+                    <form th:action="@{http://localhost:8089/list-taxpayer/nguoidongthue}">
                         <div style="display: flex">
                             <input type="text" style="color: #797979;width: 330px;" value="tìm kiếm theo tên người đóng thuế" disabled>
                             <div>
@@ -326,7 +326,7 @@
                     </form>
 
 
-                    <form th:action="@{http://localhost:8082/list-taxpayer/cmnd}">
+                    <form th:action="@{http://localhost:8089/list-taxpayer/cmnd}">
                         <div style="display: flex">
                             <input type="text" style="color: #797979;width: 330px" value="tìm kiếm theo chứng minh nhân dân" disabled>
                             <div >
@@ -367,7 +367,7 @@
                 <td th:text="${b.getNgaynop()}"></td>
                 <td th:text="${b.getTongtien()}"></td>
                 <td>
-                    <form th:action="@{http://localhost:8082/list-taxpayer/idBaocaothue={id}/(id=${b.getId()})}" target="_blank">
+                    <form th:action="@{http://localhost:8089/list-taxpayer/idBaocaothue={id}/(id=${b.getId()})}" target="_blank">
                         <a style="background-color: #4ECDC4;border-color: #4ECDC4" class="btn btn-warning" onclick="this.parentElement.submit();"><i class="fas fa-user-edit ml-2"></i></a>
                     </form>
                 </td>

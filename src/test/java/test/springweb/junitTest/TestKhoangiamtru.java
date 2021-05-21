@@ -45,7 +45,7 @@ public class TestKhoangiamtru {
     public void KiemTraDanhSachKhoanGiamTruCuaBaoCaoThueKhongTonTai()
     {
         List<Khoangiamtru> ds = khoangiamtruService.getDskhoanggiamtru(0);
-        Assert.assertNull(ds);
+        Assert.assertEquals(0,ds.size());
     }
     //kiểm tra số lượng khoản giảm trừ trong danh sách lấy theo id đúng của báo cáo thuế
     @Test
@@ -68,15 +68,35 @@ public class TestKhoangiamtru {
         Khoangiamtru khoangiamtru = khoangiamtruService.getKhoangiamtru(0);
         Assert.assertNull(khoangiamtru);
     }
-    //kiểm tra cập nhật mức giảm trừ thành công của khoản giảm trừ
+    //kiểm tra cập nhật mức giảm trừ với mức giảm trừ mới
     @Test
-    public void KiemTraCapNhatMucGiamTru()
+    public void KiemTraCapNhatMucGiamTruMoi()
     {
         //tạo khoản giảm trừ để test dữ liệu
         Khoangiamtru khoangiamtru1 = khoangiamtruService.getKhoangiamtru(1);
         //lấy dữ liệu ban đầu
         int mucgiamtru = khoangiamtru1.getMucgiamtru();
         khoangiamtru1.setMucgiamtru(30);
+        //cập nhật
+        khoangiamtruService.capnhatKhoangiamtru(khoangiamtru1);
+        //tạo khoản giảm trừ để get dữ liệu từ db ra
+        Khoangiamtru khoangiamtru2 = khoangiamtruService.getKhoangiamtru(1);
+        Assert.assertEquals(khoangiamtru1.getMucgiamtru(),khoangiamtru2.getMucgiamtru());
+        //roll back lại dữ liệu của khoản giảm trừ ban đầu
+        khoangiamtru1.setMucgiamtru(mucgiamtru);
+        khoangiamtruService.capnhatKhoangiamtru(khoangiamtru1);
+    }
+
+    //kiểm tra cập nhật mức giảm trừ với mức giảm trừ cũ
+    @Test
+    public void KiemTraCapNhatMucGiamTruCu()
+    {
+        //tạo khoản giảm trừ để test dữ liệu
+        Khoangiamtru khoangiamtru1 = khoangiamtruService.getKhoangiamtru(1);
+        //lấy dữ liệu ban đầu
+        int mucgiamtru = khoangiamtru1.getMucgiamtru();
+        int mucgiamtrutest = mucgiamtru;
+        khoangiamtru1.setMucgiamtru(mucgiamtrutest);
         //cập nhật
         khoangiamtruService.capnhatKhoangiamtru(khoangiamtru1);
         //tạo khoản giảm trừ để get dữ liệu từ db ra

@@ -84,9 +84,9 @@ public class TestBaocaothue {
         List<BaocaothueDTO> ds = baocaothueService.getdsbaocaothue(pageable);
         Assert.assertEquals(0,ds.size());
     }
-    //kiểm tra số lượng bản ghi tại trang 1, với số lượng bản ghi tại 1 trang nhỏ hơn tổng số trang
+    //kiểm tra số lượng bản ghi tại 1 trang, ở đây là trang 1
     @Test
-    public void KiemTraSoLuongBanGhiTai1Trang1()
+    public void KiemTraSoLuongBanGhiTaiTrang1()
     {
         int tranghientai = 0;
         Pageable pageable = PageRequest.of(tranghientai,5);
@@ -127,6 +127,15 @@ public class TestBaocaothue {
         int tranghientai = 0;
         Pageable pageable = PageRequest.of(tranghientai,5);
         List<BaocaothueDTO> ds = baocaothueService.getDsbaocaothueTheoNam(pageable,"2050");
+        Assert.assertEquals(0,ds.size());
+    }
+    //kiểm tra danh sách báo cáo thuế lấy theo thời gian là năm sai định dạng
+    @Test
+    public void KiemTraDanhsachBaoCaoThueTheoNamSaiDinhDang()
+    {
+        int tranghientai = 0;
+        Pageable pageable = PageRequest.of(tranghientai,5);
+        List<BaocaothueDTO> ds = baocaothueService.getDsbaocaothueTheoNam(pageable,"2020abc");
         Assert.assertEquals(0,ds.size());
     }
     //kiểm tra danh sách báo cáo thuế lấy theo thời gian là tháng + năm có tồn tại
@@ -193,24 +202,34 @@ public class TestBaocaothue {
         List<BaocaothueDTO> ds = baocaothueService.getdsbaocaothueTheoTen(pageable,"Vũ Văn Vũ");
         Assert.assertEquals(0,ds.size());
     }
-    //kiểm tra danh sách báo cáo thuế lấy theo tên sai có nhiều khoảng trống
+    //kiểm tra danh sách báo cáo thuế lấy theo tên có trong csdl có nhiều khoảng trống
     @Test
-    public void KiemTraDanhsachBaoCaoThueTheoTenSaiCuPhap1()
+    public void KiemTraDanhsachBaoCaoThueTheoTenCoKhoangTrong1()
     {
         int tranghientai = 0;
         Pageable pageable = PageRequest.of(tranghientai,5);
         List<BaocaothueDTO> ds = baocaothueService.getdsbaocaothueTheoTen(pageable,"  Nguyễn   Nhật         Minh    ");
         Assert.assertEquals(0,ds.size());
     }
+    //kiểm tra danh sách báo cáo thuế lấy theo tên không có trong csdl có nhiều khoảng trống
+    @Test
+    public void KiemTraDanhsachBaoCaoThueTheoTenCoKhoangTrong2()
+    {
+        int tranghientai = 0;
+        Pageable pageable = PageRequest.of(tranghientai,5);
+        List<BaocaothueDTO> ds = baocaothueService.getdsbaocaothueTheoTen(pageable,"  Nguyễn   Nhật         Vy    ");
+        Assert.assertEquals(0,ds.size());
+    }
     //kiểm tra danh sách báo cáo thuế lấy theo tên sai có chứa cả chữ số
     @Test
-    public void KiemTraDanhsachBaoCaoThueTheoTenSaiCuPhap2()
+    public void KiemTraDanhsachBaoCaoThueTheoTenSaiCuPhap()
     {
         int tranghientai = 0;
         Pageable pageable = PageRequest.of(tranghientai,5);
         List<BaocaothueDTO> ds = baocaothueService.getdsbaocaothueTheoTen(pageable,"Nguyễn  Nhật Minh123");
         Assert.assertEquals(0,ds.size());
     }
+
     //kiểm tra danh sách báo cáo thuế lấy theo thành phố có tồn tại trong csdl
     @Test
     public void KiemTraDanhSachBaoCaoThueTheoThanhPhoCoTonTai()
@@ -229,6 +248,34 @@ public class TestBaocaothue {
         List<BaocaothueDTO> ds = baocaothueService.getDsbaocaothueTheoTP(pageable,"Hòa Bình");
         Assert.assertEquals(0,ds.size());
     }
+    //kiểm tra danh sách báo cáo thuế lấy cmnd có trong csdl
+    @Test
+    public void KiemTraDanhsachBaoCaoThueTheoCMND1()
+    {
+        int tranghientai = 0;
+        Pageable pageable = PageRequest.of(tranghientai,5);
+        List<BaocaothueDTO> ds = baocaothueService.getdsbaocaothueTheoCMND(pageable,"0942216667");
+        Assert.assertNotNull(ds);
+    }
+    //kiểm tra danh sách báo cáo thuế lấy cmnd không có trong csdl
+    @Test
+    public void KiemTraDanhsachBaoCaoThueTheoCMND2()
+    {
+        int tranghientai = 0;
+        Pageable pageable = PageRequest.of(tranghientai,5);
+        List<BaocaothueDTO> ds = baocaothueService.getdsbaocaothueTheoCMND(pageable,"0942216663");
+        Assert.assertEquals(0,ds.size());
+    }
+    //kiểm tra danh sách báo cáo thuế lấy cmnd sai định dạng
+    @Test
+    public void KiemTraDanhsachBaoCaoThueTheoCMND3()
+    {
+        int tranghientai = 0;
+        Pageable pageable = PageRequest.of(tranghientai,5);
+        List<BaocaothueDTO> ds = baocaothueService.getdsbaocaothueTheoCMND(pageable,"0942216663abc");
+        Assert.assertEquals(0,ds.size());
+    }
+
     //kiểm tra thống kê theo tháng lấy theo id thuế TNCN
     @Test
     public void KiemTraThongKeTheoThangCoTonTai1()
@@ -252,24 +299,31 @@ public class TestBaocaothue {
     }
     //kiểm tra thống kê theo năm lấy theo id thuế TNCN
     @Test
-    public void KiemTraThongKeTheoNamCoTonTai1()
+    public void KiemTraThongKeTheoNamVoiIdCoTonTai1()
     {
         Thongke thongke = baocaothueService.getDsbaocaothueTheoNam("2020",1);
         Assert.assertNotNull(thongke);
     }
     //kiểm tra thống kê theo năm lấy theo id thuế TNCN, thời gian chưa xuất hiện trong db
     @Test
-    public void KiemTraThongKeTheoNamCoTonTai2()
+    public void KiemTraThongKeTheoNamVoiIdCoTonTai2()
     {
         Thongke thongke = baocaothueService.getDsbaocaothueTheoNam("2025",1);
         Assert.assertNull(thongke);
     }
     //kiểm tra thống kê theo năm lấy theo id thuế TNCN không tồn tại
     @Test
-    public void KiemTraThongKeTheoNamKhongTonTai()
+    public void KiemTraThongKeTheoNamVoiIdSai()
     {
         Thongke thongke = baocaothueService.getDsbaocaothueTheoNam("2020",0);
         Assert.assertNull(thongke);
+    }
+    //kiểm tra thống kê theo năm lấy theo năm sai định dạng
+    @Test
+    public void KiemTraThongKeTheoNamSaiDinhDang()
+    {
+        Thongke thongke = baocaothueService.getDsbaocaothueTheoNam("2020abc",1);
+        Assert.assertNull(thongke.getTongtiennopthue());
     }
 
 }
