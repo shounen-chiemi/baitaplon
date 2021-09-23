@@ -1,6 +1,6 @@
 # Example site
 
-Hello world
+<span style="color: red">Hello world</span>
 
 ## link test
 [I'm an inline-style link](https://www.google.com)
