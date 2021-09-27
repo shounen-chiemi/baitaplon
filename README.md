@@ -53,12 +53,15 @@
 
 **cú pháp**
 ```
-![alt_text](link_img "title_img") 
+> ![alt_text](link_img "title_img") 
 trong đó :
 alt_text là tên hiển thị khi ảnh lỗi hoặc không load được, link_img là đường dẫn trực tiếp tới ảnh, title_img là nội dung khi hover vào ảnh
+```
 
+```
 ![đây là ảnh 1](https://github.com/shounen-chiemi/baitaplon/blob/master/ez-home.jpg "Ảnh 1") 
 ```
+
 
 **hiển thị**
 ![đây là ảnh 1](https://github.com/shounen-chiemi/baitaplon/blob/master/ez-home.jpg "Ảnh 1") 
