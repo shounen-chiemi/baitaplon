@@ -122,7 +122,7 @@ alert(s);
 > Blockquotes are very handy in email to emulate reply text.
 
 ## 8. List
-
+**cú pháp**
 ```
 1. Mục 1
 - mục con 1-1
@@ -131,6 +131,14 @@ alert(s);
 - mục con 2-1
 - mục con 2-2
 ```
+
+**hiển thị**
+1. Mục 1
+- mục con 1-1
+- mục con 1-2
+2. Mục 2
+- mục con 2-1
+- mục con 2-2
 
 ## 9. Emoji: 
 *(tham khảo các emoji tại https://www.webfx.com/tools/emoji-cheat-sheet/)*
