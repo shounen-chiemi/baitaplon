@@ -80,10 +80,10 @@ highlight đoạn code
 
 .cú pháp
 
-        ```javascript <br/>
-        var s = "JavaScript syntax highlighting"; <br/>
-        alert(s); <br/>
-        ``` 
+```javascript <br/>
+var s = "JavaScript syntax highlighting"; <br/>
+alert(s); <br/>
+``` 
 
 
 .hiển thị
