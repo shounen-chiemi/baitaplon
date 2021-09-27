@@ -1,5 +1,4 @@
-Các mục được trình bày theo dạng code -> hiển thị
-1. Các trường tiêu đề gồm:
+## 1. Các trường tiêu đề gồm:
 
 .cú pháp
 
@@ -20,7 +19,7 @@ Các mục được trình bày theo dạng code -> hiển thị
 + ##### title (tương ứng với h5)
 + ###### title (tương ứng với h6)
 
-2. In nghiêng, in đậm các từ/câu: 
+## 2. In nghiêng, in đậm các từ/câu: 
 
 .cú pháp
 ```
@@ -36,7 +35,7 @@ Các mục được trình bày theo dạng code -> hiển thị
 + **_word_** (vừa in nghiên vừa in đậm)
 + ~~word~~ (từ bị gạch)
 
-3. Link
+## 3. Link
 
 .cú pháp
 ```
@@ -50,7 +49,7 @@ Các mục được trình bày theo dạng code -> hiển thị
 + [this is a link](https://www.google.com "Google's Homepage") (link dạng in-line, khi hover vào có thông báo Google's Homepage)
 + [this is a link](../blob/master/hanekawa.jpg) (link trỏ tới thư mục khác trong cùng repository trên git)
 
-4. Image
+## 4. Image
 
 .cú pháp
 ```
@@ -64,7 +63,7 @@ alt_text là tên hiển thị khi ảnh lỗi hoặc không load được, link
 .hiển thị
 ![đây là ảnh 1](https://github.com/shounen-chiemi/baitaplon/blob/master/ez-home.jpg "Ảnh 1") 
 
-5. Highlighting
+## 5. Highlighting
 
 highlight từ hoặc câu
 
@@ -93,7 +92,7 @@ var s = "JavaScript syntax highlighting"; <br/>
 alert(s); <br/>
 ``` 
 
-6. Table
+## 6. Table
 (có thể sử dụng cả in đậm, in nghiêng hay highlight trong bảng)
 
 .cú pháp
@@ -112,7 +111,8 @@ alert(s); <br/>
 | dữ liệu rất ok | `thời tiết xấu` | $12 |
 | dữ liệu thật ok | thời tiết khô ráo | $1 |
 
-7. Blockquotes
+## 7. Blockquotes
+
 .cú pháp
 ```
 > Blockquotes are very handy in email to emulate reply text. 
@@ -121,7 +121,8 @@ alert(s); <br/>
 .hiển thị
 > Blockquotes are very handy in email to emulate reply text.
 
-9. Emoji: (tham khảo các emoji tại https://www.webfx.com/tools/emoji-cheat-sheet/)
+## 8. Emoji: (tham khảo các emoji tại https://www.webfx.com/tools/emoji-cheat-sheet/)
+
 .cú pháp
 `:bowtie: :smile:` 
 
