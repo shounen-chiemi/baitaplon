@@ -66,40 +66,46 @@ alt_text là tên hiển thị khi ảnh lỗi hoặc không load được, link
 
 5. Highlighting
 
-highligh từ hoặc câu
+highlight từ hoặc câu
+
 .cú pháp
 ```
+từ hoặc câu highlight đặt trong 1 dấu `
 `highlight`
 ```
 
 .hiển thị
 + `highlight` 
 
-highlight 1 đoạn
-<kbd>
-```
-đây là đoạn văn
-đoạn văn rất hay
-```
-</kbd>
-
 highlight đoạn code
-```javascript
-var s = "JavaScript syntax highlighting";
-alert(s);
+
+.cú pháp
+<span>
+```javascript <br/>
+var s = "JavaScript syntax highlighting"; <br/>
+alert(s); <br/>
 ``` 
-```
+</span>
 
-
-(highlight đoạn code)
-```javascript
-var s = "JavaScript syntax highlighting";
-alert(s);
+.hiển thị
+```javascript <br/>
+var s = "JavaScript syntax highlighting"; <br/>
+alert(s); <br/>
 ``` 
 
 6. Table
 (có thể sử dụng cả in đậm, in nghiêng hay highlight trong bảng)
 
+.cú pháp
+```
+| *Cột 1* | Cột 2 | Cột 3 |
+| --- | --- | --- |
+| _dữ liệu ok_ | thời tiết đẹp | $1600 |
+| dữ liệu rất ok | `thời tiết xấu` | $12 |
+| dữ liệu thật ok | thời tiết khô ráo | $1 |
+```
+
+.hiển thị
 | *Cột 1* | Cột 2 | Cột 3 |
 | --- | --- | --- |
 | _dữ liệu ok_ | thời tiết đẹp | $1600 |
@@ -107,7 +113,18 @@ alert(s);
 | dữ liệu thật ok | thời tiết khô ráo | $1 |
 
 7. Blockquotes
+.cú pháp
+```
 > Blockquotes are very handy in email to emulate reply text. 
+```
 
-9. Emoji: 
-:bowtie: :smile: (tham khảo các emoji tại https://www.webfx.com/tools/emoji-cheat-sheet/)
+.hiển thị
+> Blockquotes are very handy in email to emulate reply text.
+
+9. Emoji: (tham khảo các emoji tại https://www.webfx.com/tools/emoji-cheat-sheet/)
+.cú pháp
+`:bowtie: :smile:` 
+
+.hiển thị
+:bowtie: :smile:
+
