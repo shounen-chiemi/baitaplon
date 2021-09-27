@@ -23,16 +23,16 @@
 
 .cú pháp
 ```
-*word* hoặc _word_ (in nghiêng)
-**word** hoặc __word__ (in đậm)
-**_word_** (vừa in nghiên vừa in đậm)
+*word* (in nghiêng)
+**word** (in đậm)
+***word*** (vừa in nghiên vừa in đậm)
 ~~word~~ (từ bị gạch)
 ```
 
 .hiển thị
 + *word* hoặc _word_ (in nghiêng)
 + **word** hoặc __word__ (in đậm)
-+ **_word_** (vừa in nghiên vừa in đậm)
++ ***word*** (vừa in nghiên vừa in đậm)
 + ~~word~~ (từ bị gạch)
 
 ## 3. Link
