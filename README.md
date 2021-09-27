@@ -79,17 +79,17 @@ từ hoặc câu highlight đặt trong 1 dấu `
 highlight đoạn code
 
 .cú pháp
-<code>
-```javascript <br/>
-var s = "JavaScript syntax highlighting"; <br/>
-alert(s); <br/>
-``` 
-</code>
+<span>
+  ```javascript <br/>
+  var s = "JavaScript syntax highlighting"; <br/>
+  alert(s); <br/>
+  ``` 
+</span>
 
 .hiển thị
-```javascript <br/>
-var s = "JavaScript syntax highlighting"; <br/>
-alert(s); <br/>
+```javascript
+var s = "JavaScript syntax highlighting";
+alert(s);
 ``` 
 
 ## 6. Table
