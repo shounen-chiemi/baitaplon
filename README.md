@@ -23,4 +23,4 @@ In nghiêng | Đánh dấu | In đậm
 Reference-style: 
 ![alt text][logo]
 
-[logo]: https://github.com/shounen-chiemi/baitaplon/blob/master/hanekawa.jpg "Logo Title Text 2"
+[logo]: hanekawa.jpg "Logo Title Text 2"
