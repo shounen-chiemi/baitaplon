@@ -1,5 +1,8 @@
 Các mục được trình bày theo dạng code -> hiển thị
 1. Các trường tiêu đề gồm:
+
+.cú pháp
+
 ```
 # title (tương ứng với h1)
 ## title (tương ứng với h2)
@@ -8,6 +11,7 @@ Các mục được trình bày theo dạng code -> hiển thị
 ##### title (tương ứng với h5)
 ###### title (tương ứng với h6)
 ```
+.hiển thị
 
 + # title (tương ứng với h1)
 + ## title (tương ứng với h2)
@@ -17,6 +21,8 @@ Các mục được trình bày theo dạng code -> hiển thị
 + ###### title (tương ứng với h6)
 
 2. In nghiêng, in đậm các từ/câu: 
+
+.cú pháp
 ```
 *word* hoặc _word_ (in nghiêng)
 **word** hoặc __word__ (in đậm)
@@ -24,28 +30,66 @@ Các mục được trình bày theo dạng code -> hiển thị
 ~~word~~ (từ bị gạch)
 ```
 
-+ *word* (in nghiêng)
-+ **word** (in đậm)
+.hiển thị
++ *word* hoặc _word_ (in nghiêng)
++ **word** hoặc __word__ (in đậm)
 + **_word_** (vừa in nghiên vừa in đậm)
 + ~~word~~ (từ bị gạch)
 
 3. Link
+
+.cú pháp
 ```
 [this is a link](https://www.google.com) (link dạng in-line)
 [this is a link](https://www.google.com "Google's Homepage") (link dạng in-line, khi hover vào có thông báo Google's Homepage)
 [this is a link](../blob/master/hanekawa.jpg) (link trỏ tới thư mục khác trong cùng repository trên git)
 ```
+
+.hiển thị
 + [this is a link](https://www.google.com) (link dạng in-line)
 + [this is a link](https://www.google.com "Google's Homepage") (link dạng in-line, khi hover vào có thông báo Google's Homepage)
 + [this is a link](../blob/master/hanekawa.jpg) (link trỏ tới thư mục khác trong cùng repository trên git)
 
 4. Image
 
-![alt text](https://github.com/shounen-chiemi/baitaplon/blob/master/ez-home.jpg "Ảnh 1") 
+.cú pháp
+```
+![alt_text](link_img "title_img") 
+trong đó :
+alt_text là tên hiển thị khi ảnh lỗi hoặc không load được, link_img là đường dẫn trực tiếp tới ảnh, title_img là nội dung khi hover vào ảnh
+
+![đây là ảnh 1](https://github.com/shounen-chiemi/baitaplon/blob/master/ez-home.jpg "Ảnh 1") 
+```
+
+.hiển thị
+![đây là ảnh 1](https://github.com/shounen-chiemi/baitaplon/blob/master/ez-home.jpg "Ảnh 1") 
 
 5. Highlighting
 
-`highlight` (highlight từ hoặc câu)
+highligh từ hoặc câu
+.cú pháp
+```
+`highlight`
+```
+
+.hiển thị
++ `highlight` 
+
+highlight 1 đoạn
+<kbd>
+```
+đây là đoạn văn
+đoạn văn rất hay
+```
+</kbd>
+
+highlight đoạn code
+```javascript
+var s = "JavaScript syntax highlighting";
+alert(s);
+``` 
+```
+
 
 (highlight đoạn code)
 ```javascript
